@@ -1,4 +1,4 @@
-package me.thiti;
+package me.thiti.model;
 
 import me.thiti.exception.InvalidSquareFindingException;
 

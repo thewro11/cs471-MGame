@@ -1,4 +1,4 @@
-package me.thiti;
+package me.thiti.model;
 
 public class MGame {
     private static final int N = 10;
@@ -8,7 +8,7 @@ public class MGame {
     private Board board;
     private Player[] players;
 
-    public MGame(Player[] players) {
+    public MGame(String[] playerNames, int playerCount) {
         roundCat = 0;
 
         dice = new Die[2];
@@ -17,7 +17,17 @@ public class MGame {
 
         board = new Board();
 
+        Player[] players = createPlayers(playerNames, playerCount);
         initializePlayers(players);
+    }
+
+    private Player[] createPlayers(String[] playerNames, int playerCount) {
+        Player[] players = new Player[playerCount];
+        for (int i = 0; i < playerCount; ++i) {
+            players[i] = new Player(playerNames[i]);
+        }
+
+        return players;
     }
 
     private void initializePlayers(Player[] players) {

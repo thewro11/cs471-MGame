@@ -1,4 +1,4 @@
-package me.thiti;
+package me.thiti.model;
 
 public class Piece {
     private Square location;
