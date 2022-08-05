@@ -16,7 +16,7 @@ public class UI {
 
         while (true) {
             System.out.print("Please enter amount of players (2-8): ");
-            playerCount = scanner.nextInt();
+            playerCount = Integer.parseInt(scanner.nextLine());
 
             if (playerCount >= 2 && playerCount <= 8) {
                 break;
@@ -28,7 +28,7 @@ public class UI {
         playerNames = new String[playerCount];
         for (int i = 0; i < playerCount; ++i) {
             System.out.print("Enter player #" + (i + 1) + " " + "name: ");
-            playerNames[i] = scanner.next();
+            playerNames[i] = scanner.nextLine();
         }
 
         mGame = new MGame(playerNames, playerCount);
